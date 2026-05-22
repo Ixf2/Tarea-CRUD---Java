@@ -37,12 +37,12 @@ public class VistaGUICRUD extends javax.swing.JFrame {
         lNombre = new javax.swing.JLabel();
         tNombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        taResultado = new javax.swing.JTextArea();
         bInsertar = new javax.swing.JButton();
         bActualizar = new javax.swing.JButton();
         bEliminar = new javax.swing.JButton();
         bLimpiar = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        RegistrosCustomer = new javax.swing.JTable();
         pOrders = new javax.swing.JPanel();
         lIDOrder = new javax.swing.JLabel();
         tIDOrder = new javax.swing.JTextField();
@@ -51,12 +51,12 @@ public class VistaGUICRUD extends javax.swing.JFrame {
         tIDCustomer2 = new javax.swing.JTextField();
         tFechaPedido = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         bInsertar1 = new javax.swing.JButton();
         bActualizar1 = new javax.swing.JButton();
         bEliminar1 = new javax.swing.JButton();
         bLimpiar1 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        RegistrosOrder = new javax.swing.JTable();
         pShipments = new javax.swing.JPanel();
         bInsertar2 = new javax.swing.JButton();
         bActualizar2 = new javax.swing.JButton();
@@ -69,8 +69,8 @@ public class VistaGUICRUD extends javax.swing.JFrame {
         tIDOrders2 = new javax.swing.JTextField();
         tFechaEnvio = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        RegistrosShipment = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,10 +81,6 @@ public class VistaGUICRUD extends javax.swing.JFrame {
 
         lNombre.setText("Nombre:");
 
-        taResultado.setColumns(20);
-        taResultado.setRows(5);
-        jScrollPane1.setViewportView(taResultado);
-
         bInsertar.setText("Insertar");
 
         bActualizar.setText("Actualizar");
@@ -93,19 +89,41 @@ public class VistaGUICRUD extends javax.swing.JFrame {
 
         bLimpiar.setText("Limpiar");
 
+        RegistrosCustomer.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "ID", "Nombre"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(RegistrosCustomer);
+        if (RegistrosCustomer.getColumnModel().getColumnCount() > 0) {
+            RegistrosCustomer.getColumnModel().getColumn(0).setResizable(false);
+            RegistrosCustomer.getColumnModel().getColumn(1).setResizable(false);
+        }
+
         javax.swing.GroupLayout pCustomersLayout = new javax.swing.GroupLayout(pCustomers);
         pCustomers.setLayout(pCustomersLayout);
         pCustomersLayout.setHorizontalGroup(
             pCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pCustomersLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(pCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
                     .addGroup(pCustomersLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
                         .addGroup(pCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pCustomersLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1)
                             .addGroup(pCustomersLayout.createSequentialGroup()
                                 .addGroup(pCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pCustomersLayout.createSequentialGroup()
@@ -123,8 +141,11 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addGroup(pCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(bActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(bLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 27, Short.MAX_VALUE)))
+                                    .addComponent(bLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 56, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCustomersLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5)))
                 .addContainerGap())
         );
         pCustomersLayout.setVerticalGroup(
@@ -148,8 +169,8 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
         );
 
         pnlShipments.addTab("Customers", pCustomers);
@@ -160,10 +181,6 @@ public class VistaGUICRUD extends javax.swing.JFrame {
 
         lFechaPedido.setText("Fecha pedido:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
         bInsertar1.setText("Insertar");
 
         bActualizar1.setText("Actualizar");
@@ -171,6 +188,32 @@ public class VistaGUICRUD extends javax.swing.JFrame {
         bEliminar1.setText("Eliminar");
 
         bLimpiar1.setText("Limpiar");
+
+        RegistrosOrder.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Order", "ID Customer", "Fecha pedido"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(RegistrosOrder);
+        if (RegistrosOrder.getColumnModel().getColumnCount() > 0) {
+            RegistrosOrder.getColumnModel().getColumn(0).setResizable(false);
+            RegistrosOrder.getColumnModel().getColumn(1).setResizable(false);
+            RegistrosOrder.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout pOrdersLayout = new javax.swing.GroupLayout(pOrders);
         pOrders.setLayout(pOrdersLayout);
@@ -195,7 +238,7 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                             .addComponent(tFechaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(72, 72, 72)
                         .addGroup(pOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bInsertar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bInsertar1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                             .addComponent(bEliminar1))
                         .addGap(26, 26, 26)
                         .addGroup(pOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -204,7 +247,7 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                         .addGap(40, 40, 40))
                     .addGroup(pOrdersLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2)))
+                        .addComponent(jScrollPane6)))
                 .addContainerGap())
         );
         pOrdersLayout.setVerticalGroup(
@@ -234,8 +277,9 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                             .addComponent(bLimpiar1))))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pnlShipments.addTab("Orders", pOrders);
@@ -254,9 +298,31 @@ public class VistaGUICRUD extends javax.swing.JFrame {
 
         jLabel5.setText("Fecha envío:");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        RegistrosShipment.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Shipment", "ID Order", "Fecha envío"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(RegistrosShipment);
+        if (RegistrosShipment.getColumnModel().getColumnCount() > 0) {
+            RegistrosShipment.getColumnModel().getColumn(0).setResizable(false);
+            RegistrosShipment.getColumnModel().getColumn(1).setResizable(false);
+            RegistrosShipment.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout pShipmentsLayout = new javax.swing.GroupLayout(pShipments);
         pShipments.setLayout(pShipmentsLayout);
@@ -285,12 +351,12 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                     .addComponent(tFechaEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pShipmentsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator3)
+                .addGap(525, 525, 525)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(pShipmentsLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pShipmentsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3)
+                .addComponent(jScrollPane4)
                 .addContainerGap())
         );
         pShipmentsLayout.setVerticalGroup(
@@ -320,8 +386,8 @@ public class VistaGUICRUD extends javax.swing.JFrame {
                     .addComponent(tFechaEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -394,6 +460,9 @@ public class VistaGUICRUD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable RegistrosCustomer;
+    private javax.swing.JTable RegistrosOrder;
+    private javax.swing.JTable RegistrosShipment;
     private javax.swing.JButton bActualizar;
     private javax.swing.JButton bActualizar1;
     private javax.swing.JButton bActualizar2;
@@ -412,14 +481,12 @@ public class VistaGUICRUD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lFechaPedido;
     private javax.swing.JLabel lIDCustomer;
     private javax.swing.JLabel lIDOrder;
@@ -436,6 +503,5 @@ public class VistaGUICRUD extends javax.swing.JFrame {
     private javax.swing.JTextField tIDOrders2;
     private javax.swing.JTextField tIDShipment;
     private javax.swing.JTextField tNombre;
-    private javax.swing.JTextArea taResultado;
     // End of variables declaration//GEN-END:variables
 }
