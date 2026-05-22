@@ -123,7 +123,7 @@
                                               <Component id="bActualizar" max="32767" attributes="0"/>
                                               <Component id="bLimpiar" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="61" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -269,13 +269,18 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="tIDOrder" alignment="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="tIDCustomer2" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="tIDOrder" alignment="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="tIDCustomer2" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="tFechaPedido" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="tFechaPedido" pref="129" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="bInsertar1" alignment="1" pref="78" max="32767" attributes="0"/>
                                       <Component id="bEliminar1" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -469,7 +474,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="525" max="-2" attributes="0"/>
-                          <Component id="jSeparator3" pref="1" max="32767" attributes="0"/>
+                          <Component id="jSeparator3" pref="6" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
