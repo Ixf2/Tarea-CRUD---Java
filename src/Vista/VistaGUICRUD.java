@@ -4,19 +4,17 @@
  */
 package Vista;
 
-/**
- *
- * @author isard
- */
 public class VistaGUICRUD extends javax.swing.JFrame {
-    
+
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaGUICRUD.class.getName());
 
-    /**
-     * Creates new form VistaGUICRUD
-     */
     public VistaGUICRUD() {
         initComponents();
+
+        tIDCustomer.setEditable(false);
+        tIDOrder.setEditable(false);
+        tIDShipment.setEditable(false);
     }
 
     /**
@@ -458,6 +456,99 @@ public class VistaGUICRUD extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new VistaGUICRUD().setVisible(true));
     }
+
+    public javax.swing.JTextField getTIDCustomer() {
+        return tIDCustomer;
+    }
+
+    public javax.swing.JTextField getTNombre() {
+        return tNombre;
+    }
+
+    public javax.swing.JTextField getTIDOrder() {
+        return tIDOrder;
+    }
+
+    public javax.swing.JTextField getTIDCustomer2() {
+        return tIDCustomer2;
+    }
+
+    public javax.swing.JTextField getTFechaPedido() {
+        return tFechaPedido;
+    }
+
+    public javax.swing.JTextField getTIDShipment() {
+        return tIDShipment;
+    }
+
+    public javax.swing.JTextField getTIDOrders2() {
+        return tIDOrders2;
+    }
+
+    public javax.swing.JTextField getTFechaEnvio() {
+        return tFechaEnvio;
+    }
+
+    public javax.swing.JButton getBInsertar() {
+        return bInsertar;
+    }
+
+    public javax.swing.JButton getBActualizar() {
+        return bActualizar;
+    }
+
+    public javax.swing.JButton getBEliminar() {
+        return bEliminar;
+    }
+
+    public javax.swing.JButton getBLimpiar() {
+        return bLimpiar;
+    }
+
+    public javax.swing.JButton getBInsertar1() {
+        return bInsertar1;
+    }
+
+    public javax.swing.JButton getBActualizar1() {
+        return bActualizar1;
+    }
+
+    public javax.swing.JButton getBEliminar1() {
+        return bEliminar1;
+    }
+
+    public javax.swing.JButton getBLimpiar1() {
+        return bLimpiar1;
+    }
+
+    public javax.swing.JButton getBInsertar2() {
+        return bInsertar2;
+    }
+
+    public javax.swing.JButton getBActualizar2() {
+        return bActualizar2;
+    }
+
+    public javax.swing.JButton getBEliminar2() {
+        return bEliminar2;
+    }
+
+    public javax.swing.JButton getBLimpiar2() {
+        return bLimpiar2;
+    }
+
+    public javax.swing.JTable getRegistrosCustomer() {
+        return RegistrosCustomer;
+    }
+
+    public javax.swing.JTable getRegistrosOrder() {
+        return RegistrosOrder;
+    }
+
+    public javax.swing.JTable getRegistrosShipment() {
+        return RegistrosShipment;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable RegistrosCustomer;
